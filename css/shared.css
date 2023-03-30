@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    font-family: raleway, sans-serif;
+    font-weight: 500;
+    font-size: 20;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+* {
+    box-sizing: border-box
+}
+
+:root {
+    --color-primary: #5e81ac;
+    --color-hover: #ffffff;
+    --color-text-primary: #ffffff;
+    --color-background-primary: #2e3442;
+    --color-background-secondary: #222834;
+    --color-background-tertiary: #050d1d
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.center-vertical {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0
+}
+
+:root {
+    color-scheme: dark
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--color-background-tertiary)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+    border: 3px solid var(--color-background-tertiary)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-hover)
+}
+
+.blobs-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+  }
+
+.blob {
+    position: absolute;
+    height: 100%
+}
+
+.blob-darker {
+    filter: brightness(70%)
+}
+
+.paragraphs {
+    padding: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    opacity: 80%;
+}
+
+.header-links {
+    text-align: center;
+    display: flex;
+    padding: 2em;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons {
+    display: inline-block;
+}
+
+#btn-nan {
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+}
+
+.buttons a {
+    border: 1px solid #008000;
+    color: #fff;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons a:hover {
+    background: #008000;
+    transition: all 500ms;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    user-select: none;
+    line-height: 1.0;
+}
+
+@media only screen and (max-width:320px),
+screen and (max-height:570px) /* Tentando deixar otimizado para dispositivos menores(De qualquer forma, a maioria dos dispositivos atuais é HD(1280x720px)*/ {
+    body {
+        overflow: scroll;
+    }
+    footer {
+        padding-bottom: 5px;
+    }
+
+    .landing-subtitle, .main-title {
+        padding: 25px; 
+    }
+}
+
+@media only screen and (max-width:500px),
+screen and (max-aspect-ratio:10/16) {
+    .blob {
+        display: none
+    }
+}
