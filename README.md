@@ -1,5 +1,6 @@
 # Meu website
 É apenas meu website, não tem nada de demais...
 
+Usa Bootstrap5, Jquery, Sweetalert2, HTML5, CSS3
 
 <a href="https://www.white-blue1.github.io/website">Link</a>
