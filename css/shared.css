@@ -157,6 +157,10 @@ nav a:hover {
     line-height: 1.0;
 }
 
+.main-title {
+padding: 5px;
+}
+
 @media only screen and (max-width:320px),
 screen and (max-height:570px) /* Tentando deixar otimizado para dispositivos menores(De qualquer forma, a maioria dos dispositivos atuais é HD(1280x720px)*/ {
     body {
