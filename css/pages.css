@@ -52,6 +52,10 @@ body {
     user-select: none;
 }
 
+.box-content p {
+    cursor: text;
+}
+
 .box-footer {
     display: flex;
     justify-content: space-between;
