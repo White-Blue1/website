@@ -25,34 +25,35 @@
     <div class="root">
         <div class="content">
             <div class="landing">
-                <nav class="navbar navbar-light navbar-expand-lg fixed-top shadow-lg clean-navbar"> <!-- Essa div será renderizada primeiro por padrão... -->
+                <nav id="load-nav" class="navbar navbar-light navbar-expand-lg fixed-top shadow-lg clean-navbar"> <!-- Essa div será renderizada primeiro por padrão... -->
                     <ul class="navbar-links">
                     <li class="nav-item active"><a href="#">Início</a></li>
                     <li class="nav-item"><a href="./projetos/">Projetos</a></li>
+                    <li class="nav-item"><a href="#bio">Sobre mim</a></li>
                 </ul>
                 </nav>
                 <div class="landing-grid-1">
                     <div class="landing-content center">
                         &nbsp;
-                        <h2 class="main-title">Seja bem-vindo(a) ao meu site pessoal!</h2><hr style="width: 15em;">
-                        <h2 class="landing-subtitle">Eu criei isto pois estava entediado...<br></h2>
+                        <h2 class="main-title" style="display:none;">Seja bem-vindo(a) ao meu site pessoal!</h2><hr style="width: 15em;">
+                        <h2 class="landing-subtitle" id="landing-subtitle" style="display:none;">Eu criei isto pois estava entediado...<br></h2>
                         <div class="header-links">
-                            <section class="buttons">
-                            <a href="https://github.com/White-Blue1" class="btn-git">Visite meu perfil do Github</a>
+                            <section class="buttons" style="display:none;">
+                            <a href="https://github.com/White-Blue1" class="btn-git" style="display:none">Visite meu perfil do Github</a>
                             <a id="button-empty" class="btn-git">Visite meu servidor SA-MP</a>
                             <div class="discord-btn">
                             <h2>Meu perfil do Discord:</h2>
                             <div class="card" title="Perfil do Discord">
                             <span class="block-click" id="card-block">
-                            <img class="discord-card" id="card-btn" src="https://lanyard.cnrad.dev/api/1059400819616776222" alt="Discord Profile">
+                            <img class="discord-card" id="card-btn" alt="loading..." style="display:none" src="https://lanyard.cnrad.dev/api/1059400819616776222" alt="Discord Profile">
                         </div>
                         </span>
                         </div>
                         </section>
                         </div>
-                        <div class="paragraphs">
-                        <h3>Biografia:</h3>
-                        <table>
+                        <div class="paragraphs" id="bio">
+                        <h3>Sobre Mim:</h3>
+                        <table id="bio-table" style="display:none;">
                             <thead>
                                 <tr>
                                 <th>Nome</th><th>Hobbies</th><th>Cidade</th><th>Estado</th><th>País</th>
@@ -76,7 +77,7 @@
 </div>
 
 
-            <footer>
+            <footer style="display:none">
                 <p>&copy; White Blue - Todos os direitos reservados.</p> <!-- Só pra deixar algo no footer, não tem nenhum valor lol -->
             </footer>
     
@@ -105,6 +106,18 @@
                     timerProgressBar: false,
                 });
             })
+    // Carregamento com efeito fade-in dinâmico da página
+    $(".root").fadeIn(9000);
+    $(".landing-subtitle").fadeIn(300);
+    $(".btn-git").fadeIn(500);
+    $(".discord-card").fadeIn(2500);
+    $(".buttons").fadeIn(800);
+    $("footer").fadeIn(3000);
+    $(".main-title").fadeIn(1000);
+    $("#bio-table").fadeIn(1600);
+    $("#load-nav").fadeIn(6000);
+    $("footer").scroll(function() {
+});
     </script>
     </body>
 
