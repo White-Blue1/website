@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Um breve e simples tutorial que explica como integrar pagamentos automatizados no SA-MP usando PHP, MySQL e o SDK do Mercado Pago!">
+    <meta name="author" content="White_Blue">
+    <meta name="keywords" content="samp,php,mysql,sqlsamp,mercadopago,gamemode">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name"
+        content="Tutorial - Como integrar pagamentos automatizados no SA-MP usando o SDK do Mercado Pago e PHP?" />
+    <!-- website name -->
+    <meta property="og:site" content="https://www.white-blue1.github.io/tutorial-php-payment" /> <!-- website link -->
+    <meta property="og:title"
+        content="Como integrar pagamentos automatizados no SA-MP usando o SDK do Mercado Pago e PHP?" />
+    <!-- title shown in the actual shared post -->
+    <meta property="og:description"
+        content="Um breve e simples tutorial que explica como integrar pagamentos automatizados no SA-MP usando PHP, MySQL e o SDK do Mercado Pago!" />
+    <!-- description shown in the actual shared post -->
+    <meta property="og:url" content="https://www.white-blue1.github.io/tutorial-php-payment" />
+    <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Tutorial - Como integrar pagamentos automatizados no SA-MP usando o SDK do Mercado Pago e PHP?</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <div id="cookieNotice" class="bg-light fixed-top mt-5" style="display: none;">
+        <div id="closeIcon" style="display: none;">
+        </div>
+        <div class="title-wrap">
+            <h4><i class="fa fa-cookie"></i> Cookies</h4>
+        </div>
+        <div class="content-wrap">
+            <div class="msg-wrap">
+                <p>Ao usar esse site, você concorda com ter cookies armazenados em seu navegador e concorda com os <a style="color:#115cfa;" href="/privacy-policy">Termos de Privacidade</a> do Google.</p>
+                <div class="btn-wrap">
+                    <button class="btn-primary" onclick="acceptCookieConsent();">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="root">
+
+        <!-- Preloader -->
+        <div class="spinner-wrapper">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+        <!-- end of preloader -->
+
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container">
+
+                <a class="navbar-brand logo-text page-scroll" href="#header" title="Início">White_Blue</a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-awesome fas fa-bars"></span>
+                    <span class="navbar-toggler-awesome fas fa-times"></span>
+                </button>
+                <!-- end of mobile menu toggle button -->
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#header">Início <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+
+
+                        <!-- Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">Tutorial</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item page-scroll" href="#intro"><span
+                                        class="item-text">Introdução</span></a>
+                                <div class="dropdown-items-divide-hr"></div>
+                                <a class="dropdown-item page-scroll" href="#instalacao"><span
+                                        class="item-text">Instalação do
+                                        SDK</span></a>
+                                <div class="dropdown-items-divide-hr"></div>
+                                <a class="dropdown-item page-scroll" href="#final"><span
+                                        class="item-text">Final</span></a>
+                            </div>
+                        </li>
+                        <!-- end of dropdown menu -->
+
+                    </ul>
+                </div>
+            </div> <!-- end of container -->
+        </nav> <!-- end of navbar -->
+        <!-- end of navigation -->
+
+
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-xl-5">
+                            <div class="text-container">
+                                <h2 class="text-light">Tutorial básico de integração &amp; automação de pagamentos em
+                                    PHP usando MySQL, PHP e o Mercado Pago SDK</h2>
+                                <p class="p-large">É tão simples quanto parece!</p>
+                                <a class="btn-solid-lg page-scroll" href="#intro">Ir para o tutorial</a>
+                            </div> <!-- end of text-container -->
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </div> <!-- end of header-content -->
+        </header> <!-- end of header -->
+        <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            viewBox="0 0 1920 310">
+            <defs>
+                <style>
+                    .cls-1 {
+                        fill: #5f4def;
+                    }
+                </style>
+            </defs>
+            <title>header-frame</title>
+            <path class="cls-1"
+                d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" />
+        </svg>
+        <!-- end of header -->
+    </div>
+    <!-- Intro -->
+    <h3 class="text-center">Introdução</h3>
+    <div id="intro" class="text-center bg-light text-light p-5">
+
+        <p>
+            <mark>Observação: A lógica que iremos utilizar é bem simples(Lembrando que esse tutorial apenas é válido
+                para gamemodes feitas em MySQL, caso sua gamemode for feita em DOF2 ou semelhante, infelizmente não é
+                possível integrar ao site).</mark>
+        </p>
+
+        <p>
+            Para este tutorial, você precisará de no mínimo de conhecimento básico-intermediário em MySQL, PHP, Pawn e
+            desenvolvimento Web
+        </p>
+
+        <p>
+            A primeira coisa a se fazer, é instalar o PHP, para isto você pode acessar a <a
+                href="https://windows.php.net/download#php-8.2" target="_blank">página de downloads</a> do site oficial
+            do PHP e baixar a versão mais recente.
+        </p>
+
+        <p>
+            Após baixar, você deve instalar o PHP, que para iniciantes, pode ser um processo relativamente complicado.
+            Por isso, irei deixar um tutorial do YouTube abaixo:
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TxmPhYDkQQI" frameborder="0"
+            allow="accelerometer; encrypted-media; web-share"></iframe>
+
+        <p>
+            Após baixar o PHP, você precisará baixar o SDK do Mercado Pago, o que neste tutorial, usaremos o package
+            manager Composer.
+
+            Para usar o Composer, primeiro precisamos instalá-lo, para isso, vá até a página de download do site oficial
+            do Composer e baixe a última versão<a href="https://getcomposer.org/Composer-Setup.exe"
+                target="_blank">(Link direto)</a>.
+
+            Instalar o Composer não tem segredo, é apenas seguir as instruções do Instalador que você acabou de baixar.
+        </p>
+
+        <p><mark>Observação: Para usar o SDK e obter um token de acesso, é necessário ter uma conta no <a
+                    href="https://www.mercadopago.com.br/" target="_blank">Mercado Pago</a> e ter uma aplicação
+                registrada para obter o acesso ao token.</mark></p>
+
+    </div>
+    <!-- end of Intro -->
+
+
+    <!-- sdk install -->
+    <h3 class="text-center">Instalação do SDK do Mercado Pago</h3>
+
+    <div id="instalacao" class="text-center bg-light text-light mb-5">
+        <p>
+            A instalação do SDK do Mercado Pago usando o Composer também não tem segredo.
+
+            Mas para usar o Composer, antes precisamos instalar o GIT, para isso, acesse a <a
+                href="https://git-scm.com/downloads/" target="_blank">página de Downloads do GIT</a> e baixe a última
+            versão de acordo com seu Sistema Operacional e após baixar, siga as instruções de instalação.
+
+            Após isso, já podemos usar o Composer, abra sua IDE(Neste tutorial, usaremos o Visual Studio Code, mas pode
+            ser facilmente executado em qualquer outra IDE que suporte PHP).
+
+            E após abrir a IDE, abra o console(No caso, usaremos o console integrado do Visual Studio Code, mas você
+            pode usar o Prompt de Comando do Windows ou o PowerShell).
+
+            Com o console na pasta do projeto(Caso você esteja usando o Prompt de Comando ou o PowerShell, use o comando
+            <code
+                id="codeblock">cd Caminho_para_a_pasta_do_projeto <i class="fa fa-clipboard event-show" title="Copiar" onclick="copy('cd Caminho_para_a_pasta_do_projeto');"></i></code>)
+        </p>
+        <p>
+            E após isso, digite o seguinte comando:
+            <code
+                id="codeblock">composer require "mercadopago/dx-php:2.5.5" <i class="fa fa-clipboard event-show" title="Copiar" onclick="copy('composer require \'mercadopago/dx-php:2.5.5\'');"></i></code>
+            <!-- Tive que usar aspas simples na função de copiar pois o Javascript não permite o uso aspas duplas dentro de string portanto, caso eu usasse aspas duplas, não conseguiria usar a função 'copy'. -->
+        </p>
+    </div>
+    <!-- end of sdk install -->
+
+
+    <!-- SDK Usage -->
+    <div id="usosdk" class="text-center bg-light text-light p-5 mt-5">
+        <h3 class="text-center">Uso do SDK</h3>
+
+        <p>
+            Finalmente, vamos para a parte importante do tutorial, que é o uso do SDK e como realizar as transações.
+
+            Para isso, vamos criar um arquivo PHP chamado <q>processar_pagamento.php</q> note que o arquivo <b>DEVE</b>
+            ter a extensão <b>.PHP</b>.
+
+            Dentro do arquivo processar_pagamento.php, vamos adicionar o seguinte código(É apenas um exemplo,
+            personalize do jeito que quiser):
+
+        </p>
+        <pre>
+&lt;?php
+require 'vendor/autoload.php';
+MercadoPago\SDK::setAccessToken('SEU_ACCESS_TOKEN'); // Troque SEU_ACESS_TOKEN pelo seu token de acesso real.
+// Dados do pagamento
+$payment_data = array(
+"transaction_amount" => $_POST['valor'],
+"description" => "Exemplo de pagamento",
+"payment_method_id" => "visa",
+"payer" => array(
+"email" => $_POST['email']
+),
+"external_reference" => uniqid() // Usando um ID único para referência externa
+);
+// Aqui criamos o pagamento
+$payment = new MercadoPago\Payment();
+$payment->transaction_amount = $payment_data['transaction_amount'];
+$payment->description = $payment_data['description'];
+$payment->payment_method_id = $payment_data['payment_method_id'];
+$payment->payer = $payment_data['payer'];
+$payment->external_reference = $payment_data['external_reference']; 
+$payment->save();      
+
+if ($payment->status == 'approved') {
+    // Pagamento aprovado, faça a query no banco de dados
+    $conn = new mysqli("host", "usuario", "senha", "banco"); // Coloque aqui as credenciais do seu banco de dados MySQL
+
+    if ($conn->connect_error) {
+        die("Erro na conexão com o banco de dados: " . $conn->connect_error); // Caso der algum erro na conexão com o banco de dados, retorna uma mensagem de erro na página contendo o erro em questão
+    }
+
+    $external_reference = $payment->external_reference;
+    $transaction_amount = $payment->transaction_amount;
+
+    $sql = "INSERT INTO pagamentos (external_reference, transaction_amount) VALUES ('$external_reference', '$transaction_amount')"; // Esta query é apenas um exemplo, aqui você pode enviar uma query para o banco de dados do seu servidor caso o pagamento tenha sido aprovado.
+
+    if ($conn->query($sql) === true) {
+        echo "Pagamento aprovado e dados inseridos no banco de dados.";
+    } else {
+        echo "Erro ao inserir dados no banco de dados: " . $conn->error;
+    }
+
+    $conn->close();
+} else {
+    echo "Pagamento não aprovado.";
+}
+?&gt;
+        </pre>
+
+        Depois disso, crie uma página index.php, que será onde o formulário de pagamento estará localizado.
+
+        E adicione o seguinte código dentro do arquivo index.php:
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Página de Compra title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Produto para Compra&lt;/h1&gt;
+        &lt;form action="processar_pagamento.php" method="post"&gt;
+        &lt;label&gt; for="email">E-mail:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        &lt;br&gt;
+        &lt;label for="valor">Valor:label&gt;
+        &lt;input type="number" id="valor" name="valor" step="0.01" required&gt;
+        &lt;br/&gt;
+        &lt;button type="submit"&gt;Comprar&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&gt;/html&lt;
+
+        </pre>
+    </div>
+    <!-- end of SDK Usage -->
+
+    <!-- Final -->
+    <div class="final_content text-center p-5 mt-5 bg-light" id="final">
+        <h2>Final</h2>
+        <p>
+            E isso é tudo! Espero que eu tenha ajudado você à entender como funciona a integração de pagamentos usando
+            PHP e o SDK do Mercado Pago.
+        </p>
+
+        <p>
+            Os códigos mostrados acima são apenas simples exemplos, personalize do jeito que você desejar!
+        </p>
+    </div>
+    <!-- End of final -->
+
+
+    <!-- Footer -->
+    <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1920 79">
+        <defs>
+            <style>
+                .cls-2 {
+                    fill: #5f4def;
+                }
+            </style>
+        </defs>
+        <title>footer-frame</title>
+        <path class="cls-2"
+            d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z"
+            transform="translate(0 -0.188)" />
+    </svg>
+
+    <div class="footer">
+        <div class="container">
+            <h3 class="text-light">White_Blue</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Navegação</h4>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a class="white" href="#intro">Introdução</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a class="white" href="#instalacao">Instalação do SDK</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="icon-container">
+                        <span class="fa-stack">
+                            <a href="https://www.github.com/white-blue1" target="_blank"><i
+                                    class="fab fa-github social-icon"></i></a>
+                        </span>
+                    </div> <!-- end of col -->
+                </div> <!-- end of col -->
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-light">Tutorial por <a>White_Blue</a> | Tema por <a href="https://themewagon.com/"
+                            target="_blank">ThemeWagon</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+
+</html>
