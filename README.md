@@ -7,3 +7,4 @@ Usa Bootstrap5, Jquery, Sweetalert2, HTML5, CSS3
 
 
 ### 1/04/2023 5:31 AM: Arquivado
+### 12/08/2023 6:40 AM: Desarquivado
