@@ -272,9 +272,8 @@ if ($payment->status == 'approved') {
     $external_reference = $payment->external_reference;
     $transaction_amount = $payment->transaction_amount;
 
-    $sql = "INSERT INTO pagamentos (external_reference, transaction_amount) VALUES ('$external_reference', '$transaction_amount')"; // Esta query é apenas um exemplo, aqui você pode enviar uma query para o banco de dados do seu servidor caso o pagamento tenha sido aprovado.
-
     if ($conn->query($sql) === true) {
+        $sql = "INSERT INTO pagamentos (external_reference, transaction_amount) VALUES ('$external_reference', '$transaction_amount')"; // Esta query é apenas um exemplo, aqui você pode enviar uma query para o banco de dados do seu servidor caso o pagamento tenha sido aprovado.
         echo "Pagamento aprovado e dados inseridos no banco de dados.";
     } else {
         echo "Erro ao inserir dados no banco de dados: " . $conn->error;
@@ -308,7 +307,7 @@ if ($payment->status == 'approved') {
         &lt;button type="submit"&gt;Comprar&lt;/button&gt;
         &lt;/form&gt;
     &lt;/body&gt;
-&gt;/html&lt;
+&lt;/html&gt;
 
         </pre>
     </div>
